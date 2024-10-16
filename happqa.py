@@ -1,13 +1,24 @@
 #!/usr/bin/env python
 
-"""Happy QA
-This script solves how many releases possible within a 2-week sprint (10 working days) with the following constraints:
-       1.Any taken release must be completed within the sprint.
-       2.Bob can only validate one release at a time.
-       3.Release validation cannot be postponed.
+"""
+Happy QA Code Assignment
+The following script solves how many releases can be possibly done within a 2-week sprint, 10 working days with the following conditions:
+1.Any taken release must be completed within the sprint.
+2.Bob can only validate one release at any given time.
+3.Release validation cannot be postponed.
 
-I'll use a greedy algorithm to solve this problem.
+Because of this problem, I will utilize a greedy algorithm.
 python: 3.13
+PyCharm CE
+ChatGPT and Blackbox.ai AI platforms were consulted to explore the algorithms suitable for scheduling scenarios in Agile sprints. Several approaches were suggested by them. I have chosen the "greedy algorithm" because it is simple and understandable for me, and it has been used very much in the industry.
+There are other algorithms that could be considered for release scheduling besides my selection. A few of them are as follows:
+1. Dynamic Programming: This is an approach wherein the problem is divided into subproblems, each is distinctly solved, and results are stored in order to avoid redundant computation. Here, you could fill a 2D table tracking, for each day in the sprint, how many maximum releases can be validated considering all the possible validation times.
+2. Backtracking Algorithm: An algorithm that, by recursion, may explore all possible combinations of releases. It exhibits backtracking at the dead end, i.e., a point where a release cannot be finished within the sprint. This would be able to find feasible combinations of releases, though somewhat computationally costly.
+3. Branch and Bound Algorithm: This algorithm is somewhat like a backtracking algorithm, but it makes use of bounding functions to discard non-promising branches. It carries out branch-and-bound by an estimate of the maximum number of releases that can be completed for a given set, thereby pruning branches that cannot lead to optimal solutions.
+4. ILP: This represents the problem as an integer linear program where it is focusing on maximizing releases completed in the sprint by respecting constraints on validation times and sprint duration. Solution of the ILP can be obtained with an ILP solver.
+5. Metaheuristics: These are high-level algorithms that make use of heuristics to explore possible solutions. Examples include simulated annealing, genetic algorithms, and ant colony optimization. These methods may provide a good solution while probably not ensuring optimality.
+
+
 """
 def select_releases(releases_file):
 # Read input file
