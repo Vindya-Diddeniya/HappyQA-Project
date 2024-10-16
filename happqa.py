@@ -10,7 +10,7 @@ The following script solves how many releases can be possibly done within a 2-we
 Because of this problem, I will utilize a greedy algorithm.
 python: 3.13
 PyCharm CE
-ChatGPT and Blackbox.ai AI platforms were consulted to explore the algorithms suitable for scheduling scenarios in Agile sprints. Several approaches were suggested by them. I have chosen the "greedy algorithm" because it is simple and understandable for me, and it has been used very much in the industry.
+AI platforms were consulted to explore the algorithms suitable for scheduling scenarios in Agile sprints. Several approaches were suggested by them. I have chosen the "greedy algorithm" because it is simple and understandable for me, and it has been used very much in the industry.
 There are other algorithms that could be considered for release scheduling besides my selection. A few of them are as follows:
 1. Dynamic Programming: This is an approach wherein the problem is divided into subproblems, each is distinctly solved, and results are stored in order to avoid redundant computation. Here, you could fill a 2D table tracking, for each day in the sprint, how many maximum releases can be validated considering all the possible validation times.
 2. Backtracking Algorithm: An algorithm that, by recursion, may explore all possible combinations of releases. It exhibits backtracking at the dead end, i.e., a point where a release cannot be finished within the sprint. This would be able to find feasible combinations of releases, though somewhat computationally costly.
